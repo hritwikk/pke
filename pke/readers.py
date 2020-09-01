@@ -105,7 +105,7 @@ class RawTextReader(Reader):
             spacy_doc = spacy_model(text)
         else:
             max_length = kwargs.get('max_length', 10**6)
-            nlp = spacy.load(self.language,
+            nlp = spacy.load("en_core_web_sm",
                              max_length=max_length,
                              disable=['ner', 'textcat', 'parser'])
             nlp.add_pipe(nlp.create_pipe('sentencizer'))
